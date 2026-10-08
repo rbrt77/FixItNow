@@ -1,0 +1,25 @@
+# --- ECHIPA DE BAZA (VALIDA - CNP-uri calculate corect) ---
+Tehnician,Popescu,Ion,1900101123457,15,5,2020,Bucuresti,Frigider-Arctic|Televizor-Samsung
+Tehnician,Ionescu,Vasile,1800101123450,10,8,2018,Ploiesti,MasinaSpalat-Whirlpool|Frigider-Samsung
+Tehnician,Georgescu,Andrei,5000101123457,1,2,2023,Bucuresti,Frigider-Samsung|MasinaSpalat-Arctic|Televizor-LG
+Receptioner,Dumitrescu,Maria,2900101123459,20,1,2024,Bucuresti,
+Supervizor,Seful,Mare,1700101123454,1,1,2010,Cluj,
+
+# --- ANGAJATI EXTRA (VALIZI) ---
+Tehnician,Munteanu,Alex,1990505445562,12,12,2021,Brasov,Frigider-LG|Televizor-Sony
+Tehnician,Vasilescu,Oana,2950808012345,14,3,2022,Bucuresti,MasinaSpalat-Indesit
+Receptioner,Enache,Elena,2850202123456,10,10,2023,Constanta,
+
+# --- DATE "RELE" (INVALID DATA - Pentru testarea erorilor) ---
+# 1. Rol invalid (Sofer nu exista in sistem)
+Sofer,Viteazu,Gigel,1900101123457,1,1,2020,Bucuresti,
+# 2. CNP Invalid (Prea scurt)
+Tehnician,Test,Scurt,12345,1,1,2020,Bucuresti,Frigider-Arctic
+# 3. CNP Invalid (Contine litere)
+Receptioner,Test,Litere,1900101AB3457,1,1,2020,Bucuresti,
+# 4. Data invalida (Luna 15 nu exista - va crapa la stoi sau logica datei)
+Tehnician,Test,DataGresita,1800101123450,1,15,2020,Bucuresti,TV-Samsung
+# 5. CNP Invalid (Cifra control gresita - am schimbat ultima cifra din 7 in 0)
+Tehnician,Fals,Control,1900101123450,15,5,2020,Bucuresti,Frigider-Arctic
+# 6. Format gresit (Lipsesc campuri - nu are oras si competente)
+Tehnician,Incomplet,FaraDate,1900101123457,1,1,2020

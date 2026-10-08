@@ -1,0 +1,30 @@
+# --- CERERI VALIDE (9 bucati) ---
+Frigider,Arctic,Freeze200,2020,1500,1,2
+MasinaSpalat,Whirlpool,WashMaster,2015,2000,7.5,5
+Televizor,Samsung,QLED,2022,3000,125,1
+Frigider,Samsung,SmartCool,2023,4500,0,3
+MasinaSpalat,Arctic,EcoBubble,2019,1200,6,2
+Televizor,LG,OLED55,2021,4000,139,4
+MasinaSpalat,Indesit,OldSchool,2010,800,5,5
+Televizor,Sony,Bravia,2023,5500,160,1
+Frigider,LG,InstaView,2022,8000,1,4
+
+# --- CERERI INVALIDA (6 bucati care trb sa dea EROARE) ---
+
+# 1. Tip aparat necunoscut -> Va afisa "[EROARE] Tip electrocasnic invalid!"
+CuptorMicrounde,Samsung,HeatWave,2021,500,0,1
+
+# 2. Pretul este text ("DOUAMII") -> Va da eroare la stod (catch exception)
+Televizor,Philips,Ambilight,2020,DOUAMII,100,2
+
+# 3. Anul este text ("AnulViitor") -> Va da eroare la stoi (catch exception)
+Frigider,Arctic,Future,AnulViitor,2000,1,1
+
+# 4. Detaliu Specific gresit (Capacitate "Mica" in loc de numar) -> Eroare stod/stoi
+MasinaSpalat,Beko,WashX,2018,1300,Mica,2
+
+# 5. Complexitate este text ("Greu") -> Eroare stoi
+Televizor,Panasonic,Viera,2019,1500,100,Greu
+
+# 6. Tip scris cu litera mica (Factory e case-sensitive) -> "[EROARE] Tip electrocasnic invalid!"
+televizor,Samsung,Mic,2020,1000,80,1
